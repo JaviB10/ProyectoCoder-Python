@@ -1,0 +1,31 @@
+{% extends "PythonProject/index.html" %}
+
+{% block content_title %}
+    <h1>HOME</h1>
+{% endblock content_title %}
+    
+    
+{% block buttoms %}
+    <div>
+        <form action="{% url 'PythonProject:search_products' %}">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div>
+        <form action="{% url 'PythonProject:create_user' %}">
+            <button type="submit">Add User</button>
+        </form>
+    </div>
+
+    <div>
+        <form action="{% url 'PythonProject:create_country' %}">
+            <button type="submit">Add Country</button>
+        </form>
+    </div>
+
+    <div>
+        <form action="{% url 'PythonProject:create_product' %}">
+            <button type="submit">Add Product</button>
+        </form>
+    </div>
+{% endblock buttoms %}

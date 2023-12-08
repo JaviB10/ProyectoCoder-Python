@@ -1,0 +1,26 @@
+{% extends "PythonProject/index.html" %}
+
+{% block content_title %}
+    <h1>Search product</h1>
+{% endblock content_title %}
+
+{% block content_form %}
+    <form action="{% url 'PythonProject:search_products' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+{% endblock content_form %}
+
+{% block content_search %}
+    {% if products %}
+        <h2>Search Results:</h2>
+        <ul>
+            {% for product in products %}
+                <li>{{ product.title }} - {{ product.description }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+{% endblock content_search %}

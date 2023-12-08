@@ -1,0 +1,13 @@
+{% extends "PythonProject/index.html" %}
+
+{% block content_title %}
+    <h1>Add new user</h1>
+{% endblock content_title %}
+
+{% block content_form %}
+    <form action="{% url 'PythonProject:create_user' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save User</button>
+    </form>
+{% endblock content_form %}
